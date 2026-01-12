@@ -1,5 +1,6 @@
 name: Check Forex and Email me
-on: [push]
+#on: [push]
+on:
   schedule:
     # Use POSIX cron syntax (minute hour day_of_month month day_of_week)
     - cron: '10 19 * * *'
