@@ -9,9 +9,9 @@ import resend
 ACCESS_KEY = os.environ.get("ACCESS_KEY")
 
 if ACCESS_KEY is not None:
-    print("API Token successfully loaded.")
+    print("Exchange Rate Access Key successfully loaded.")
 else:
-    print("API Token not found!")
+    print("Exchange Rate Access Key not found!")
 
 # Note: GitHub automatically redacts secrets from logs, but you should avoid 
 # printing the raw secret value directly to the console as a security best practice.
@@ -39,31 +39,41 @@ else:
 
 if nzd2cnyfloat > targetratefloat:
   print("haha, time to trade!")
-  # email me
 
   #email me
   RESEND_API_KEY = os.environ.get("RESEND_API_KEY")
   resend.api_key = RESEND_API_KEY
   #resend.ApiKeys.list()
 
-  print("see if it comes here line 37")
+  if RESEND_API_KEY is not None:
+    print("Resend API Key successfully loaded.")
+  else:
+    print("Resend API Key not found!")
 
   params = {
     "from": "onboarding@resend.dev",
-    "to": ["szjme@outlook.com"],
-    "subject": "Good Forex Rate, Trade Now!",
+    "to": ["szjme@outlook.com","jade.mei@outlook.com","jade.mei@gmail.com","ark021810280@gmail.com"],
+    "subject": "Good Forex Rate, " + nzd2cnyfloat + " Trade Now, Actiooooooooon!",
     "html": "<strong>It Reaches the Target Rate, Time to Do Trading.</strong>"
   }
 
-  print(params)
+  #print(params)
 
   email = resend.Emails.send(params)
-  print(email)
+  #print(email)
+  print("Email sent.")
 
 else:
   print("keep waiting, be patient.")
-
-
+  RESEND_API_KEY = os.environ.get("RESEND_API_KEY")
+  resend.api_key = RESEND_API_KEY
+  params = {
+    "from": "onboarding@resend.dev",
+    "to": ["szjme@outlook.com","ark021810280@gmail.com"],
+    "subject": "Forex Rate is " + nzd2cnyfloat + ", Keep Waiting!",
+    "html": "<strong>Forex Rate Not Good, Keep Waiting.</strong>"
+  }
+  email = resend.Emails.send(params)
 
 #def check_forex_rate(fromcurrency, tocurrency, targetrate):
 
