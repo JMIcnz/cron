@@ -1,0 +1,19 @@
+name: Check Forex and Email me
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+      
+      - name: Run forex.py
+        # Expose the GitHub Actions secret as an environment variable named 'ACCESS_KEY'
+        # remember to add secrets in Github Actions Web UI
+        env:
+          ACCESS_KEY: ${{ secrets.ACCESS_KEY }}
+        run: python forex.py
