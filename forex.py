@@ -16,7 +16,7 @@ else:
 # Note: GitHub automatically redacts secrets from logs, but you should avoid 
 # printing the raw secret value directly to the console as a security best practice.
 
-api_url = "https://api.exchangeratesapi.io/v1/latest?access_key=ACCESS_KEY&format=1"
+api_url = "https://api.exchangeratesapi.io/v1/latest?access_key=" + ACCESS_KEY + "&format=1"
 response = requests.get(api_url)
 
 targetrate = "4.28"
