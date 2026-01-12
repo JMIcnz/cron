@@ -1,5 +1,11 @@
 name: Check Forex and Email me
 on: [push]
+  schedule:
+    # Use POSIX cron syntax (minute hour day_of_month month day_of_week)
+    - cron: '10 19 * * *'
+
+  # Allows manual triggering of the workflow from the Actions tab (optional)
+  workflow_dispatch:
 
 jobs:
   build:
