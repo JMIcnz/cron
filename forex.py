@@ -31,7 +31,7 @@ if response.status_code==200:
   print(f"EUR to CNY: {eur2cny}")
 
   nzd2cnyfloat = float(eur2cny) / float(eur2nzd)
-  #nzd2cny = str(nzd2cnyfloat)
+  nzd2cny = str(nzd2cnyfloat)
   print(f"NZD to CNY: {nzd2cnyfloat}")
 
 else:
@@ -53,7 +53,7 @@ if nzd2cnyfloat > targetratefloat:
   params = {
     "from": "onboarding@resend.dev",
     "to": ["szjme@outlook.com","jade.mei@outlook.com","jade.mei@gmail.com","ark021810280@gmail.com"],
-    "subject": "Good Forex Rate, " + nzd2cnyfloat + " Trade Now, Actiooooooooon!",
+    "subject": "Good Forex Rate, " + nzd2cny + " Trade Now, Actiooooooooon!",
     "html": "<strong>It Reaches the Target Rate, Time to Do Trading.</strong>"
   }
 
@@ -70,7 +70,7 @@ else:
   params = {
     "from": "onboarding@resend.dev",
     "to": ["szjme@outlook.com","ark021810280@gmail.com"],
-    "subject": "Forex Rate is " + nzd2cnyfloat + ", Keep Waiting!",
+    "subject": "Forex Rate is " + nzd2cny + ", Keep Waiting!",
     "html": "<strong>Forex Rate Not Good, Keep Waiting.</strong>"
   }
   email = resend.Emails.send(params)
