@@ -42,7 +42,8 @@ if nzd2cnyfloat > targetratefloat:
   # email me
 
   #email me
-  resend.api_key = "re_eyEis7yn_JLc7NF7GZaET7NrhKwubCiXL"
+  RESEND_API_KEY = os.environ.get("RESEND_API_KEY")
+  resend.api_key = RESEND_API_KEY
   #resend.ApiKeys.list()
 
   print("see if it comes here line 37")
