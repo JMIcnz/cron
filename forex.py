@@ -52,7 +52,7 @@ if nzd2cnyfloat > targetratefloat:
 
   params = {
     "from": "onboarding@resend.dev",
-    "to": ["szjme@outlook.com","jade.mei@outlook.com","jade.mei@gmail.com","ark021810280@gmail.com"],
+    "to": ["jadeseala@gmail.com"],
     "subject": "Good Forex Rate, " + nzd2cny + " Trade Now, Actiooooooooon!",
     "html": "<strong>It Reaches the Target Rate, Time to Do Trading.</strong>"
   }
@@ -69,7 +69,7 @@ else:
   resend.api_key = RESEND_API_KEY
   params = {
     "from": "onboarding@resend.dev",
-    "to": ["szjme@outlook.com","ark021810280@gmail.com"],
+    "to": ["jadeseala@gmail.com"],
     "subject": "Forex Rate is " + nzd2cny + ", Keep Waiting!",
     "html": "<strong>Forex Rate Not Good, Keep Waiting.</strong>"
   }
