@@ -10,7 +10,14 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: '3.x'
-      
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install os
+          pip install requests
+          pip install resend 
+        
       - name: Run forex.py
         # Expose the GitHub Actions secret as an environment variable named 'ACCESS_KEY'
         # remember to add secrets in Github Actions Web UI
