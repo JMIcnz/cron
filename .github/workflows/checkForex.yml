@@ -1,4 +1,4 @@
-name: Check Forex and Email me
+name: Check Forex and Email me 20260408
 #on: [push]
 on:
   schedule:
